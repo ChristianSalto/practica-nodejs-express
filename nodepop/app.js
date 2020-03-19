@@ -12,13 +12,26 @@ require('./lib/connectMongoose');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
+app.engine('html', require('ejs').__express);
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+/**
+ * Rutas del API
+ */
+
+app.use('/api/adsnodepops', require('./routes/api/adsNodepops'));
+
+/**
+ * Rutas del webside
+ */
 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
@@ -30,13 +43,27 @@ app.use(function (req, res, next) {
 
 // error handler
 app.use(function (err, req, res, next) {
+
+  res.status(err.status || 500);
+
+  // we can handle the error and give more 
+  // details if the error comes from the URL /api/
+
+  if (isAPIRequest(req)) {
+    res.json({ error: err.message });
+    return;
+  };
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
   res.render('error');
 });
+
+function isAPIRequest(req) {
+  return req.originalUrl.startsWith('/api/');
+}
 
 module.exports = app;

@@ -2,6 +2,8 @@
 
 const conn = require('./lib/connectMongoose');
 const AdsNodepop = require('./models/AdsNodepop');
+const ads = require('./ads.json');
+
 
 conn.once('open', async () => {
     try {
@@ -15,16 +17,5 @@ conn.once('open', async () => {
 
 async function initAdsNodepop() {
     await AdsNodepop.deleteMany();
-    await AdsNodepop.insertMany([
-        {
-            nombre: "Bicicleta", venta: true, precio: 230.15, foto: "bici.jpg", tags: [
-                "lifestyle", "motor"
-            ]
-        },
-        {
-            nombre: "iPhone 3G", venta: false, precio: 50.00, foto: "iphone.png", tags: [
-                "lifestyle", "mobile"
-            ]
-        }
-    ])
+    await AdsNodepop.insertMany(ads);
 }

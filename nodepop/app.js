@@ -34,7 +34,8 @@ app.use('/api/adsnodepops', require('./routes/api/adsNodepops'));
  */
 
 app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
+app.use('/listTags', require('./routes/listTags'));
+app.use('/cards', require('./routes/cards'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

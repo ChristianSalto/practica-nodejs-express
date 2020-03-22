@@ -1,8 +1,8 @@
 [
     {
-        "nombre": "Bicicleta",
-        "venta": true,
-        "precio": 230.15,
+        "name": "Bicycle",
+        "sale": true,
+        "price": 230.15,
         "foto": "bici.jpg",
         "tags": [
             "lifestyle",
@@ -10,9 +10,9 @@
         ]
     },
     {
-        "nombre": "iPhone 3G",
-        "venta": false,
-        "precio": 50.00,
+        "name": "iPhone 3G",
+        "sale": false,
+        "price": 50.00,
         "foto": "iphone.png",
         "tags": [
             "lifestyle",

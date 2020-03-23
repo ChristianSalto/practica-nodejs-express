@@ -34,6 +34,7 @@ GET /apiv1/adsnodepops
 
 ** Default limit is 10 **
 
+```json
 [
     {
         "name": "Bicycle",
@@ -126,7 +127,7 @@ DELETE /apiv1/adsnodepop/:id
     },
     "message": "this ad was deleted"
 }
-
+```
 
 ### List of adsnodepop -> view HTML
 
@@ -156,9 +157,9 @@ GET /listTags
 
 examples:
 
-* http://localhost:3000/cards?price=50-10000&sale=false&sort=price-1 *
-* http://localhost:3000/cards?limit=8&skip=1&price=-10000&sort=price1 *
-* http://localhost:3000/cards?fields=price *
+** http://localhost:3000/cards?price=50-10000&sale=false&sort=price-1 **
+** http://localhost:3000/cards?limit=8&skip=1&price=-10000&sort=price1 **
+** http://localhost:3000/cards?fields=price **
 
 
 ### How to start a mongoDB

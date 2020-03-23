@@ -5,7 +5,7 @@ const router = express.Router();
 
 const AdsNodepop = require('../../models/AdsNodepop');
 
-// GET /api/adsnodepops
+// GET /apiv1/adsnodepops
 // Conseguimos todos los ads
 
 router.get('/', async (req, res, next) => {
@@ -65,7 +65,6 @@ router.get('/', async (req, res, next) => {
             if (price[0] !== '' && price[1] !== '') {
                 filtro.price = { $gte: price[0], $lte: price[1] }
             }
-
         }
 
 
@@ -77,13 +76,14 @@ router.get('/', async (req, res, next) => {
 });
 
 
-// POST /api/adsnodepops
+// POST /apiv1/adsnodepops
 // Crear un ads
 
 router.post('/', async (req, res, next) => {
     try {
         const adsData = req.body;
-        const tags = req.body.tags;
+        let tags = req.body.tags;
+        typeof tags !== 'object' ? tags = [tags] : tags;
         console.log(tags);
         for (let i of tags) {
             if (i !== 'work' && i !== 'lifestyle' && i !== 'mobile' && i !== 'motor') {
@@ -104,7 +104,7 @@ router.post('/', async (req, res, next) => {
 });
 
 
-// PUT /api/adsnodepop/:id
+// PUT /apiv1/adsnodepop/:id
 // Actualizamos un ads
 
 router.put('/:id', async (req, res, next) => {
@@ -126,7 +126,7 @@ router.put('/:id', async (req, res, next) => {
 });
 
 
-// DELETE /api/adsnodepop/:id
+// DELETE /apiv1/adsnodepop/:id
 // borramos un ad
 
 router.delete('/:id', async (req, res, next) => {

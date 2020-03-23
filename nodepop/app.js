@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Rutas del API
  */
 
-app.use('/api/adsnodepops', require('./routes/api/adsNodepops'));
+app.use('/apiv1/adsnodepops', require('./routes/api/adsNodepops'));
 
 /**
  * Rutas del webside
@@ -64,7 +64,7 @@ app.use(function (err, req, res, next) {
 });
 
 function isAPIRequest(req) {
-  return req.originalUrl.startsWith('/api/');
+  return req.originalUrl.startsWith('/apiv1/');
 }
 
 module.exports = app;

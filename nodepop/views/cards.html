@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='stylesheets/cards.css' />
     <title>Cards</title>
 </head>
+
 <body>
-    <h1><%= title %> </h1>
-    <div>
-        <% cards.forEach(element => {%>
-        <li><%= element %> </li>
-        <%}); %>
+    <% cards.forEach(card =>{%>
+    <div class="div-cards">
+        <header class="div-header">
+            <h3><%= card.name %></h3>
+        </header>
+        <div><img class="div-foto" <% if(card.foto === "bici.jpg"){%> src="images/bici.jpg"
+                <% }else if(card.foto === "iPhone3G.jpg"){%> src="images/iPhone3G.jpg" <% }else{%>
+                src="images/no-photo.jpg" <% } %>></div>
+        <div class="div-tags"><%= card.tags %> </div>
+        <div class="div-price">
+            <span class="span-price"><%= card.price %> $</span>
+            <span class="span-sale"><%= card.sale %></span>
+        </div>
     </div>
+    <%  }) %>
 </body>
+
 </html>

@@ -153,13 +153,13 @@ GET /listTags
 
 ### Available queries
 
-**name,tags,sale,price,limit,skip,sort,fields**
+*name,tags,sale,price,limit,skip,sort,fields*
 
 examples:
 
-+http://localhost:3000/cards?price=50-10000&sale=false&sort=price-1+
-+http://localhost:3000/cards?limit=8&skip=1&price=-10000&sort=price1+
-+http://localhost:3000/cards?fields=price+
+`http://localhost:3000/cards?price=50-10000&sale=false&sort=price-1`
+`http://localhost:3000/cards?limit=8&skip=1&price=-10000&sort=price1`
+`http://localhost:3000/cards?fields=price`
 
 
 ### How to start a mongoDB

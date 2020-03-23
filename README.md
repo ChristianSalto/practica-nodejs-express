@@ -144,11 +144,10 @@ GET /listTags
 
 ### Technology used
 
-- Vs code -> IDE 
-- Node.js -> backend technology to interpret javascript
-- Express.js -> Node.js web framework
-- ejs -> views engine
-- Html,css y javascript -> programming languages
+- [Vs code](https://code.visualstudio.com/) -> IDE 
+- [Node.js](https://nodejs.org/es/) -> backend technology to interpret javascript
+- [Express.js](https://expressjs.com/es/) -> Node.js web framework
+- [ejs](https://www.npmjs.com/package/ejs) -> views engine
 
 
 ### Available queries

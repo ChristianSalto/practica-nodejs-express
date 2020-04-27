@@ -10,6 +10,13 @@ var app = express();
 // conectar a la base de datos
 require('./lib/connectMongoose');
 
+/**
+ * Setup de i18n
+ */
+const i18n = require('./lib/i18nConfigure')();
+app.use(i18n.init);
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');

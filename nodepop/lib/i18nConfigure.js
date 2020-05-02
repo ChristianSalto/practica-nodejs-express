@@ -11,6 +11,7 @@ module.exports = function () {
         defaultLocale: 'en',
         autoReload: true, // recargar ficheros de idiomas si cambian
         syncFiles: true, // crear literales en todos los locales
+        cookie: 'main-language',
     });
 
     // por si usamos i18n en scripts:

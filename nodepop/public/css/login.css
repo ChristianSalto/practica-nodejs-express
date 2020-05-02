@@ -1,0 +1,33 @@
+body {
+
+    background-image: linear-gradient(gray, gray);
+}
+
+#box {
+    border       : 1px solid rgb(200, 200, 200);
+    box-shadow   : rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+    background   : rgba(200, 200, 200, 0.1);
+    border-radius: 4px;
+    top          : 50px;
+    margin-top   : 10%;
+}
+
+h2 {
+    text-align: center;
+    color     : #fff;
+}
+
+.error {
+    color     : red;
+    text-align: center;
+}
+
+.btn-error {
+    background-color: #6E4D3D;
+    outline         : none !important;
+    border: #6E4D3D;
+}
+
+.btn-error:hover {
+    background-color: rgb(160, 99, 68);
+}

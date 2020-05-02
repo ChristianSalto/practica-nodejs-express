@@ -1,0 +1,21 @@
+.miTabla {
+    margin-top: 200px;
+    background: #222222;
+}
+
+.miTr>th {
+    color: #00ad5f;
+}
+
+.miThead {
+    background: #393939;
+    border    : 10px solid #393939;
+}
+
+.miTr>td {
+    color: #808080;
+}
+
+.miTbody {
+    border    : 2px solid #222222;
+}

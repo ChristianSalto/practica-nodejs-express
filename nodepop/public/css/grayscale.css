@@ -83,7 +83,7 @@
     border-bottom: 0.25rem solid #64a19d;
   }
 }
-
+/* 
 .masthead {
   position: relative;
   width: 100%;
@@ -278,7 +278,7 @@ a {
 a:focus, a:hover {
   text-decoration: none;
   color: #3c6360;
-}
+} */
 
 .bg-black {
   background-color: #161616 !important;

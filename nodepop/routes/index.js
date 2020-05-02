@@ -22,6 +22,7 @@ router.get('/', async function (req, res, next) {
     const readme = await new Promise((res, rej) => {
       fs.readFile(filename, 'utf8', (err, data) => err ? rej(err) : res(data))
     });
+    // console.log(typeof readme);
     res.render('index', { readme, title: 'NodePop' });
   } catch (err) {
     return next(err);

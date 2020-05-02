@@ -3,9 +3,10 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
+
 #mainNav {
     min-height      : 56px;
-    background-color: gray;
+    background-color: rgb(0, 0, 0);
 }
 
 #mainNav .navbar-toggler {
@@ -21,7 +22,7 @@
 
 #mainNav .navbar-brand {
     color      : rgba(255, 255, 255, .5);
-    font-size: 30px;
+    font-size  : 30px;
     font-weight: 700;
     padding    : .9rem 0
 }
@@ -39,11 +40,12 @@
 }
 
 @media (min-width:992px) {
+
     #mainNav {
         padding-top     : 0;
         padding-bottom  : 0;
         border-bottom   : none;
-        background-color: gray;
+        background-color: rgb(0, 0, 0);
         transition      : background-color .3s ease-in-out
     }
 
@@ -71,7 +73,7 @@
     }
 
     #mainNav.navbar-shrink .navbar-brand {
-        color: #161616
+        color: #dbd5d5
     }
 
     #mainNav.navbar-shrink .nav-link {
@@ -94,6 +96,7 @@
         border-bottom: .25rem solid #64a19d
     }
 }
+
 /*
 .masthead {
     position             : relative;

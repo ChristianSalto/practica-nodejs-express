@@ -1,4 +1,13 @@
 {
-	"": "",
-	"Documentacion": "Documentacion"
+	"Documentation": "Documentation",
+	"Login": "Login",
+	"Private": "Private",
+	"Invalid credentials": "Invalid credentials",
+	"Name": "Name",
+	"Sale": "Sale",
+	"Price": "Price",
+	"Photo": "Photo",
+	"Tags": "Tags",
+	"Logout": "Logout",
+	"Home": "Home"
 }

@@ -1,4 +1,14 @@
 {
-	"": "",
-	"Documentacion": "Documentation"
+	"Documentation": "Documentacion",
+	"Privte": "Privte",
+	"Login": "Iniciar Sesion",
+	"Private": "Privado",
+	"Invalid credentials": "Credenciales inválidas",
+	"Name": "Nombre",
+	"Sale": "Venta",
+	"Price": "Precio",
+	"Photo": "foto",
+	"Tags": "Etiquetas",
+	"Logout": "Cerrar Sesion",
+	"Home": "Casa"
 }

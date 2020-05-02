@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel='stylesheet' href='css/login.css' />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+
+            <div class="col-md-offset-4 col-md-4" id="box">
+                <h2><%= __('Login') %> </h2>
+                <hr>
+                <form class="form-horizontal" action=" " method="POST" id=" contact_form">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input name="email" placeholder="Email" class="form-control" type="text"
+                                        value="<%= email %>">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input name="password" placeholder="Password" class="form-control" type="password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="submit"
+                                    class="btn btn-md btn-danger pull-right btn-error"><%= __('Login') %> </button>
+                            </div>
+                        </div>
+                        <div class="error">
+                            <h3><%= error %> </h3>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>

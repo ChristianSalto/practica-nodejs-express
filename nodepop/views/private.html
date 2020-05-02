@@ -1,0 +1,33 @@
+<% include header.html %>
+
+<div class="container">
+
+    <table class="table miTabla">
+        <thead class="miThead">
+            <tr class="miTr">
+                <th><%= __('Name') %></th>
+                <th><%= __('Sale') %></th>
+                <th><%= __('Price') %></th>
+                <th><%= __('Photo') %></th>
+                <th><%= __('Tags') %></th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <% advertisements.forEach(ads =>{%>
+        <tbody class="miTbody">
+            <tr class="miTr">
+                <td><%= ads.name %></td>
+                <td><%= ads.sale %></td>
+                <td><%= ads.price %></td>
+                <td><%= ads.photo %></td>
+                <td><%= ads.tags %></td>
+                <td><%= ads._id %></td>
+            </tr>
+        </tbody>
+        <% }) %>
+    </table>
+</div>
+
+</body>
+
+</html>

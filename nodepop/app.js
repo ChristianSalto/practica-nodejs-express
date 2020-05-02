@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 
 
 var app = express();
@@ -10,11 +11,6 @@ var app = express();
 // conectar a la base de datos
 require('./lib/connectMongoose');
 
-/**
- * Setup de i18n
- */
-const i18n = require('./lib/i18nConfigure')();
-app.use(i18n.init);
 
 
 // view engine setup
@@ -28,6 +24,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+ * Setup de i18n
+ */
+const i18n = require('./lib/i18nConfigure')();
+app.use(i18n.init);
 
 
 /**
@@ -36,13 +37,44 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/apiv1/adsnodepops', require('./routes/api/adsNodepops'));
 
+
+/**
+ * Inicializamos el sistema de sesiones
+ * con el middelware que me deja la sesion del usuario cargada en req.session
+ */
+
+app.use(session({
+  name: 'nodepop-session',
+  secret: 'ieuuh875y9p5t2t94t058hhhg84hgghh4',
+  saveUninitialized: true,
+  resave: false,
+  cookie: {
+    secure: false,
+    maxAge: 1000 * 60 * 60 * 24 * 2
+  }
+}));
+
+
 /**
  * Rutas del webside
  */
 
+const sessionAuth = require('./middleware/sessionAuth');
+const logout = require('./middleware/logout');
+
+// session available for the entire app
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+});
+
 app.use('/', require('./routes/index'));
 app.use('/listTags', require('./routes/listTags'));
 app.use('/cards', require('./routes/cards'));
+app.use('/change-locale', require('./routes/change-locale'));
+app.use('/login', require('./routes/login'));
+app.use('/private', sessionAuth, require('./routes/private'));
+app.use('/logout', logout, require('./routes/cards'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

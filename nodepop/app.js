@@ -4,12 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 
 var app = express();
 
 // conectar a la base de datos
-require('./lib/connectMongoose');
+const mongooseConnection = require('./lib/connectMongoose');
 
 
 
@@ -45,13 +46,17 @@ app.use('/apiv1/adsnodepops', require('./routes/api/adsNodepops'));
 
 app.use(session({
   name: 'nodepop-session',
-  secret: 'ieuuh875y9p5t2t94t058hhhg84hgghh4',
+  secret: process.env.SESSION_SECRET,
   saveUninitialized: true,
   resave: false,
   cookie: {
     secure: false,
     maxAge: 1000 * 60 * 60 * 24 * 2
-  }
+  },
+
+  store: new MongoStore({
+    mongooseConnection: mongooseConnection
+  }),
 }));
 
 

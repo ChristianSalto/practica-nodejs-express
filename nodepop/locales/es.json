@@ -10,5 +10,16 @@
 	"Photo": "foto",
 	"Tags": "Etiquetas",
 	"Logout": "Cerrar Sesion",
-	"Home": "Casa"
+	"Home": "Casa",
+	"Announcement list": "Lista de anuncios",
+	"List": "Listado",
+	"of": "de",
+	"Examples": "Ejemplos",
+	"All": "Todos",
+	"Page": "Paginacion",
+	"Descending price order": "Ordenado por precio descendente",
+	"Ascending price order": "Ordenado por precio ascendente",
+	"By tag": "Por etiqueta",
+	"By name field": "Por campo nombre",
+	"Combined consultation": "Consulta combinada"
 }

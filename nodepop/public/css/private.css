@@ -1,6 +1,14 @@
+.div-list-ads {
+    margin-top: 150px;
+}
+
+.p-list{
+    font-size: 20px;
+}
+
 .miTabla {
-    margin-top: 200px;
     background: #222222;
+    margin-top: 50px;
 }
 
 .miTr>th {
@@ -17,5 +25,9 @@
 }
 
 .miTbody {
-    border    : 2px solid #222222;
+    border: 2px solid #222222;
+}
+
+.div-examples {
+    margin-top: 50px;
 }

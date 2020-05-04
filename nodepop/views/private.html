@@ -2,6 +2,11 @@
 
 <div class="container">
 
+    <div class="div-list-ads">
+        <h1><%= __('Announcement list') %> </h1>
+        <p class="p-list"><%= __('List') %> : <%= advertisements.length %> <%= __('of') %> <%= total %> </p>
+    </div>
+
     <table class="table miTabla">
         <thead class="miThead">
             <tr class="miTr">
@@ -26,8 +31,20 @@
         </tbody>
         <% }) %>
     </table>
+    <div class="div-examples">
+        <p><%= __('Examples') %>:</p>
+        <ul>
+            <li><a href="?"><%= __('All') %> (max. 10)</a></li>
+            <li><a href="?skip=1&limit=3"><%= __('Page') %> </a></li>
+            <li><a href="?sort=price-1"><%= __('Descending price order') %> </a></li>
+            <li><a href="?sort=price1"><%= __('Ascending price order') %></a></li>
+            <li><a href="?tags=work"><%= __('By tag') %> "work"</a></li>
+            <li><a href="?fields=name"><%= __('By name field') %> </a></li>
+            <li><a href="?price=50-10000&sale=false&sort=price-1"><%= __('Combined consultation') %> </a></li>
+        </ul>
+    </div>
 </div>
 
 </body>
 
-</html>
+<% include footer.html %>

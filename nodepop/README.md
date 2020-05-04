@@ -6,6 +6,12 @@
 npm install
 ```
 
+<span style="color:red">Important !!!</span> -> **You must copy .env.example to .env and adapt your configuration to the project**
+
+```shell
+cp .env.example .env
+```
+
 To initialize the database you can run:
 
 ```shell
@@ -135,6 +141,10 @@ DELETE /apiv1/adsnodepop/:id
 }
 ```
 
+### To see the documention -> view HTML
+
+GET /
+
 ### List of adsnodepop -> view HTML
 
 GET /cards
@@ -143,9 +153,32 @@ GET /cards
 
 GET /listTags
 
+# Private zone
+
+### To see the login -> view HTML
+
+First:
+
+GET /login
+
+### To see the private -> view HTML
+
+Second:
+
+***you need to be logged in***
+
+Try:
+
+```
+user -> "user@example.com"
+password -> 1234
+
+```
+
+GET /private
 
 
-## Other info
+# Other info
 
 
 ### Technology used

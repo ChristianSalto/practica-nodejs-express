@@ -9,5 +9,16 @@
 	"Photo": "Photo",
 	"Tags": "Tags",
 	"Logout": "Logout",
-	"Home": "Home"
+	"Home": "Home",
+	"Announcement list": "Announcement list",
+	"List": "List",
+	"of": "of",
+	"Examples": "Examples",
+	"All": "All",
+	"Page": "Page",
+	"Descending price order": "Descending price order",
+	"Ascending price order": "Ascending price order",
+	"By tag": "By tag",
+	"By name field": "By name field",
+	"Combined consultation": "Combined consultation"
 }

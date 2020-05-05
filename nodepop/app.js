@@ -32,11 +32,13 @@ const i18n = require('./lib/i18nConfigure')();
 app.use(i18n.init);
 
 
+const jwtAuth = require('./middleware/jwtAuth');
 /**
  * Rutas del API
  */
 
-app.use('/apiv1/adsnodepops', require('./routes/api/adsNodepops'));
+app.use('/apiv1/adsnodepops', jwtAuth(), require('./routes/api/adsNodepops'));
+app.use('/apiv1/authentication', require('./routes/api/authenticationJWT'));
 
 
 /**

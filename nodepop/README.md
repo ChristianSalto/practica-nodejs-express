@@ -40,6 +40,29 @@ npm run start
 
 ## API Methods
 
+
+### Authentication
+
+POST /apiv1/authentication
+
+```
+email -> "user@example.com"
+password -> "1234"
+
+success:
+   
+   return {
+       token:token
+   }
+
+fail: 
+
+   return {
+       "error": "Invalid credentials"
+   }   
+
+```
+
 ### List of adsnodepops
 
 GET /apiv1/adsnodepops
@@ -170,8 +193,8 @@ Second:
 Try:
 
 ```
-user -> "user@example.com"
-password -> 1234
+email -> "user@example.com"
+password -> "1234"
 
 ```
 

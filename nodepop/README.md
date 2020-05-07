@@ -65,7 +65,16 @@ fail:
 
 ### List of adsnodepops
 
-GET /apiv1/adsnodepops
+*you will to able to put the token in different ways:*
+
+```
+Query -> token=token
+Headers -> Authorization=token
+Body -> token=token
+
+```
+
+GET /apiv1/adsnodepops?token=token
 
 **Default limit is 10**
 

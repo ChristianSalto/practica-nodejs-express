@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const multer = require('multer');
+const upload = multer({ dest: path.join(__dirname, 'public/img/') });
+
 
 
 var app = express();
@@ -19,11 +22,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', require('ejs').__express);
 
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 /**
  * Setup de i18n
@@ -31,13 +36,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 const i18n = require('./lib/i18nConfigure')();
 app.use(i18n.init);
 
-
+const type = upload.single('foto');
 const jwtAuth = require('./middleware/jwtAuth');
 /**
  * Rutas del API
  */
 
-app.use('/apiv1/adsnodepops', jwtAuth(), require('./routes/api/adsNodepops'));
+
+app.use('/apiv1/adsnodepops', type, require('./routes/api/adsNodepops'));
 app.use('/apiv1/authentication', require('./routes/api/authenticationJWT'));
 
 

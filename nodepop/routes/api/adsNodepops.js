@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 const AdsNodepop = require('../../models/AdsNodepop');
+const storeWithOriginalName = require('../../middleware/storeWithOriginalName');
 
 // GET /apiv1/adsnodepops
 // Conseguimos todos los ads
@@ -82,9 +83,12 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try {
         const adsData = req.body;
+        const { fileName } = storeWithOriginalName(req.file);
+        console.log(fileName);
+        // console.log(adsData);
         let tags = req.body.tags;
         typeof tags !== 'object' ? tags = [tags] : tags;
-        console.log(tags);
+        //console.log(tags);
         for (let i of tags) {
             if (i !== 'work' && i !== 'lifestyle' && i !== 'mobile' && i !== 'motor') {
                 return res.status(400).json({

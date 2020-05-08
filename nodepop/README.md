@@ -213,6 +213,16 @@ GET /private
 # Other info
 
 
+***you can resize the image to show it in your private zone***
+
+run on different terminals:
+
+```shell            
+npm run service
+npm run conversionImage
+```
+
+
 ### Technology used
 
 - [Vs code](https://code.visualstudio.com/) -> IDE 

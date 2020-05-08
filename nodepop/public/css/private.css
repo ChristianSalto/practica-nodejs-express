@@ -2,7 +2,7 @@
     margin-top: 150px;
 }
 
-.p-list{
+.p-list {
     font-size: 20px;
 }
 
@@ -22,6 +22,10 @@
 
 .miTr>td {
     color: #808080;
+}
+
+.miTr>td>h5 {
+    margin-top: 30px;
 }
 
 .miTbody {

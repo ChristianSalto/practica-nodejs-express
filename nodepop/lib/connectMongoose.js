@@ -18,7 +18,10 @@ conn.on('error', err => {
     process.exit(1);
 });
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
+const connMongoDB = process.env.MONGODB_CONNECTION_STRING;
+//console.log(connMongoDB)
+
+mongoose.connect(connMongoDB === undefined ? "mongodb://localhost/nodepop" : connMongoDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

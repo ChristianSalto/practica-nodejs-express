@@ -21,12 +21,12 @@
         <% advertisements.forEach(ads =>{%>
         <tbody class="miTbody">
             <tr class="miTr">
-                <td><%= ads.name %></td>
-                <td><%= ads.sale %></td>
-                <td><%= ads.price %></td>
-                <td><%= ads.photo %></td>
-                <td><%= ads.tags %></td>
-                <td><%= ads._id %></td>
+                <td><h5><%= ads.name %></h5></td>
+                <td><h5><%= ads.sale %></h5></td>
+                <td><h5><%= ads.price %></h5></td>
+                <td><img src="img/small_<%= ads.foto %>"></td>
+                <td><h5><%= ads.tags %></h5></td>
+                <td><h5><%= ads._id %></h5></td>
             </tr>
         </tbody>
         <% }) %>

@@ -5,9 +5,7 @@
     <header class="div-header">
         <h3><%= card.name %></h3>
     </header>
-    <div><img class="div-foto" <% if(card.foto === "bici.jpg"){%> src="img/bici.jpg"
-            <% }else if(card.foto === "iPhone3G.jpg"){%> src="img/iPhone3G.jpg" <% }else{%> src="img/no-photo.jpg"
-            <% } %>></div>
+    <div><img class="div-foto" src="img/<%= card.foto %>"></div>
     <div class="div-tags"><%= card.tags %> </div>
     <div class="div-price">
         <span class="span-price"><%= card.price %> $</span>

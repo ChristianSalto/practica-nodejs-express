@@ -43,7 +43,7 @@ const jwtAuth = require('./middleware/jwtAuth');
  */
 
 
-app.use('/apiv1/adsnodepops', type, require('./routes/api/adsNodepops'));
+app.use('/apiv1/adsnodepops', type, jwtAuth(), require('./routes/api/adsNodepops'));
 app.use('/apiv1/authentication', require('./routes/api/authenticationJWT'));
 
 

@@ -83,12 +83,14 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try {
         const adsData = req.body;
-        const { fileName } = storeWithOriginalName(req.file);
-        console.log(fileName);
-        // console.log(adsData);
+        if (req.file === undefined) {
+            adsData.foto = "no-photo.jpg";
+        } else {
+            const { fileName } = storeWithOriginalName(req.file);
+            adsData.foto = fileName;
+        }
         let tags = req.body.tags;
         typeof tags !== 'object' ? tags = [tags] : tags;
-        //console.log(tags);
         for (let i of tags) {
             if (i !== 'work' && i !== 'lifestyle' && i !== 'mobile' && i !== 'motor') {
                 return res.status(400).json({

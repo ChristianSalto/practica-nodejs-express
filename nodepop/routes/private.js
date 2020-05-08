@@ -6,8 +6,8 @@ const router = express.Router();
 const AdsNodepop = require('../models/AdsNodepop');
 
 router.get('/', async (req, res, next) => {
-    const total = await AdsNodepop.count();
     try {
+        const total = await AdsNodepop.count();
         const name = req.query.name;
         const tags = req.query.tags;
         const sale = req.query.sale;
@@ -67,7 +67,7 @@ router.get('/', async (req, res, next) => {
         }
 
         const advertisements = await AdsNodepop.list(filtro, limit, skip, sort, fields);
-        //console.log(advertisements);
+        console.log(advertisements);
         res.render('private', { total, advertisements: advertisements });
     } catch (err) {
         next(err);

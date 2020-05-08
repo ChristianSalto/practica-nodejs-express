@@ -5,3 +5,8 @@
     color       : rgb(7, 43, 0);
     font-size   : 40px;
 }
+
+.a-index:hover {
+    color          : rgb(7, 43, 0);
+    text-decoration: none;
+}

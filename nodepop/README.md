@@ -222,6 +222,11 @@ npm run service
 npm run conversionImage
 ```
 
+***you can run the tests***
+
+```shell
+npm run test
+```
 
 ### Technology used
 

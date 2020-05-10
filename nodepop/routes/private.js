@@ -67,7 +67,6 @@ router.get('/', async (req, res, next) => {
         }
 
         const advertisements = await AdsNodepop.list(filtro, limit, skip, sort, fields);
-        console.log(advertisements);
         res.render('private', { total, advertisements: advertisements });
     } catch (err) {
         next(err);

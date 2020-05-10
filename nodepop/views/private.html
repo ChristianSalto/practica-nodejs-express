@@ -23,7 +23,7 @@
             <tr class="miTr">
                 <td><h5><%= ads.name %></h5></td>
                 <td><h5><%= ads.sale %></h5></td>
-                <td><h5><%= ads.price %></h5></td>
+                <td><h5><%= ads.price %> $</h5></td>
                 <td><img src="img/small_<%= ads.foto %>"></td>
                 <td><h5><%= ads.tags %></h5></td>
                 <td><h5><%= ads._id %></h5></td>
@@ -39,7 +39,7 @@
             <li><a href="?sort=price-1"><%= __('Descending price order') %> </a></li>
             <li><a href="?sort=price1"><%= __('Ascending price order') %></a></li>
             <li><a href="?tags=work"><%= __('By tag') %> "work"</a></li>
-            <li><a href="?fields=name"><%= __('By name field') %> </a></li>
+            <li><a href="?fields=foto"><%= __('By name field') %> </a></li>
             <li><a href="?price=50-10000&sale=false&sort=price-1"><%= __('Combined consultation') %> </a></li>
         </ul>
     </div>

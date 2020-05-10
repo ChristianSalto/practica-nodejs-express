@@ -26,8 +26,9 @@ router.post('/', async (req, res, next) => {
         req.session.authUser = {
             _id: usuario._id
         };
-        console.log(req.session)
+        
         res.redirect('/private');
+
     } catch (err) {
         next(err);
     }

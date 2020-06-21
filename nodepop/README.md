@@ -1,5 +1,14 @@
 # NodePop
 
+### DevOps
+
+You can see the applications displayed by Node and React in the following URL:
+
+```shell
+Node -> ec2-67-202-23-149.compute-1.amazonaws.com
+React -> 67.202.23.149
+```
+
 ## Install
 
 ```shell
